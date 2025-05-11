@@ -1,28 +1,154 @@
+
 <html>
   <head>
-    <title>Ideias | Sugestões | Demandas</title>
+    <meta charset="UTF-8">
+    <title>Residencial Torres de San Telmo</title>
     <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
         font-family: Arial, sans-serif;
+        background: url('https://www.construfase.com.br/image/cT05OSZ6Yz0xJnNyYz1pbWcvZW1wcmVlbmRpbWVudG9zL2VtcHJlZW5kaW1lbnRvXzQ3Mi5qcGcmc2VjdXJlPXtidXJufQ==.jpg') no-repeat center/cover;
+        color: #333;
+      }
+header {
+  position: relative;
+  height: 100px;
+  background: url('https://www.construfase.com.br/image/cT05OSZ6Yz0xJnNyYz1pbWcvZW1wcmVlbmRpbWVudG9zL2VtcHJlZW5kaW1lbnRvXzQ3Mi5qcGcmc2VjdXJlPXtidXJufQ==.jpg') no-repeat center calc(100% - 60%) / cover;
+}
+
+      nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255,255,255,0.8);
+        border-radius: 8px;
+      }
+      nav ul { list-style: none; display: flex; }
+      nav li { margin: 0 15px; }
+      nav a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+		text-align: center;
+      }
+      nav a:hover, nav a.active { background: #0077cc; color: #fff; border-radius: 4px; }
+      main { padding: 40px; background: rgba(255,255,255,0.9); min-height: calc(87vh - 100px); }
+      section { display: none; }
+      section.active { display: block; }
+      footer {
+        background: #222;
+        color: #ddd;
+        padding: 10px;
         text-align: center;
-        margin: 0;
-        padding: 0.2rem;
-        background-color: #f5f5f5;
+        font-size: 14px;
       }
-      h1 {
-        margin-bottom: 1rem;
-        font-size: 1,5rem;
-      }
-      iframe {
-        width: 100%;
-        height: 80vh;
-        border: none;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+      footer a { color: #4da6ff; text-decoration: none; }
+      .fotos img { max-width: 200px; margin: 10px; border-radius: 4px; }
+      form input, form textarea { width: 100%; padding: 8px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; }
+      form button { padding: 10px 20px; border: none; background: #0077cc; color: #fff; border-radius: 4px; cursor: pointer; }
     </style>
   </head>
   <body>
-    <h1>Ideias | Sugestões | Demandas</h1>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNqLiDsCoVCHW6TAR0XCg66MTbOrLJJ_mq69xFJ3Ovg9yZsqjnIlQHOnjbUXuVCgsydCGjHrfRdIV-/pubhtml?gid=0&range=A1:D&widget=false&headers=false&chrome=false"></iframe>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#docs" class="active">Documentos úteis</a></li>
+          <li><a href="#ideias">Ideias<br>Sugestões<br>Demandas</a></li>
+          <li><a href="#fotos">Fotos</a></li>
+          <li><a href="#agendamento">Agendamento de espaços</a></li>
+          <li><a href="#oportunidades">Oportunidades de aquisição</a></li>
+          <li><a href="#quem-somos">Quem somos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="docs" class="active">
+        <h2>Documentos úteis</h2>
+        <ul>
+          <li><a href="#">Regulamento interno (PDF)</a></li>
+          <li><a href="#">Ata de assembleia geral</a></li>
+          <li><a href="#">Contato de emergência</a></li>
+        </ul>
+      </section>
+      <section id="ideias">
+        <h2>Situação das demandas</h2><br>
+		<iframe style="width: 100%; height: 80vh; border: none; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNqLiDsCoVCHW6TAR0XCg66MTbOrLJJ_mq69xFJ3Ovg9yZsqjnIlQHOnjbUXuVCgsydCGjHrfRdIV-/pubhtml?gid=0&amp;range=A1:D&amp;widget=false&amp;headers=false&amp;chrome=false"></iframe><br><br><br>
+		<h2>Novas sugestões e demandas</h2><br><br>
+        <form>
+          <label>Seu nome:</label>
+          <input type="text" name="nome" required>
+          <label>E-mail:</label>
+          <input type="email" name="email" required>
+          <label>Mensagem:</label>
+          <textarea name="mensagem" rows="5" required></textarea>
+          <label>Anexar arquivo (opcional):</label>
+          <input type="file" name="arquivo">
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+      <section id="fotos">
+        <h2>Fotos</h2>
+        <div class="fotos">
+          <img style="height: 200px;" src="https://www.construfase.com.br/image/cT05OSZ6Yz0xJnNyYz1pbWcvZW1wcmVlbmRpbWVudG9zL2VtcHJlZW5kaW1lbnRvXzQ3Mi5qcGcmc2VjdXJlPXtidXJufQ==.jpg" alt="Foto do condomínio">
+          <img style="height: 200px;" src="https://www.masieroimoveis.com/wp-content/uploads/2019/09/FOTO-INSER%C3%87%C3%83O-810x455.jpg" alt="Salão de festas">
+          <img style="height: 200px;" src="https://www.masieroimoveis.com/wp-content/uploads/2019/09/CAMPO-E-CHURRAS-SAN-TELMO.jpg" alt="Campo">
+        </div>
+      </section>
+      <section id="agendamento">
+        <h2>Agendamento de espaços</h2>
+        <form>
+          <label>Espaço:</label>
+          <select>
+            <option>Salão de festas</option>
+            <option>Churrasqueira</option>
+            <option>Quadra esportiva</option>
+          </select><br><br>
+          <label>Data:</label>
+          <input type="date">
+          <label>Horário:</label>
+          <input type="time">
+          <button type="submit">Agendar</button>
+        </form>
+      </section>
+      <section id="oportunidades">
+        <h2>Oportunidades de aquisição</h2>
+        <p>Conheça unidades disponíveis à venda ou locação:</p>
+        <ul>
+          <li>Apto 101 – 2 quartos – R$ 350.000</li>
+          <li>Apto 203 – 3 quartos – R$ 450.000</li>
+          <li>Loja 01 – Térreo – R$ 200.000</li>
+        </ul>
+      </section>
+      <section id="quem-somos">
+        <h2>Quem somos</h2>
+        <p>Residencial Torres de San Telmo – Excelência em morar bem.</p>
+      </section>
+    </main>
+    <footer>
+      <p>Endereço: Rua dr. Jairo Frank, 100 – Argentina, Criciúma – SC</p>
+      <p>Contatos: (48) 1234-5678 | res.torresdesantelmo@gmail.com </p>
+      <p>Redes sociais:
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">LinkedIn</a>
+      </p>
+      <p>Síndicos: Janquiel &amp; Nicoly</p>
+    </footer>
+    <script>
+      const links = document.querySelectorAll('nav a');
+      const sections = document.querySelectorAll('main section');
+      links.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          links.forEach(l => l.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+          link.classList.add('active');
+          document.querySelector(link.getAttribute('href')).classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>
