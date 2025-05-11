@@ -49,28 +49,79 @@ header {
       .fotos img { max-width: 200px; margin: 10px; border-radius: 4px; }
       form input, form textarea { width: 100%; padding: 8px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; }
       form button { padding: 10px 20px; border: none; background: #0077cc; color: #fff; border-radius: 4px; cursor: pointer; }
+	  /*MENU RECOLHIVEL*/
+		.dropdown {
+		  position: relative;
+		}
+
+		.dropdown-content {
+		  line-height: 1.0;
+		  display: none;
+		  position: absolute;
+		  background-color: white;
+		  min-width: 160px;
+		  border: 1px solid #ccc;
+		  z-index: 1;
+		  top: 100%;
+		  left: 0;
+		}
+
+		.dropdown-content li {
+		  display: block;
+		}
+
+		.dropdown-content a {
+		  padding: 8px 12px;
+		  display: block;
+		  
+		}
+
+		.dropdown:hover .dropdown-content {
+		  display: block;
+		}
+
     </style>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li><a href="#docs" class="active">Documentos úteis</a></li>
+          <li><a href="#quem-somos" class="active">Quem somos</a></li>
+          <li><a href="#docs">Documentos úteis</a></li>
           <li><a href="#ideias">Ideias<br>Sugestões<br>Demandas</a></li>
-          <li><a href="#fotos">Fotos</a></li>
           <li><a href="#agendamento">Agendamento de espaços</a></li>
           <li><a href="#oportunidades">Oportunidades de aquisição</a></li>
-          <li><a href="#quem-somos">Quem somos</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section id="docs" class="active">
+	  <section id="quem-somos" class="active">
+        <h2>Quem somos</h2><br>
+        <p>Residencial Torres de San Telmo – Excelência em morar bem.</p>
+		<br><hr><br>
+        <h2>Fotos</h2>
+        <div class="fotos">
+          <img style="height: 200px;" src="https://www.construfase.com.br/image/cT05OSZ6Yz0xJnNyYz1pbWcvZW1wcmVlbmRpbWVudG9zL2VtcHJlZW5kaW1lbnRvXzQ3Mi5qcGcmc2VjdXJlPXtidXJufQ==.jpg" alt="Foto do condomínio">
+          <img style="height: 200px;" src="https://www.masieroimoveis.com/wp-content/uploads/2019/09/FOTO-INSER%C3%87%C3%83O-810x455.jpg" alt="Salão de festas">
+          <img style="height: 200px;" src="https://www.masieroimoveis.com/wp-content/uploads/2019/09/CAMPO-E-CHURRAS-SAN-TELMO.jpg" alt="Campo">
+        </div>
+      </section>
+      <section id="docs">
         <h2>Documentos úteis</h2>
-        <ul>
-          <li><a href="#">Regulamento interno (PDF)</a></li>
-          <li><a href="#">Ata de assembleia geral</a></li>
-          <li><a href="#">Contato de emergência</a></li>
+        <ul style="line-height: 2.6;">
+          <li><a href="#">Manual do proprietário</a></li>
+          <li><a href="#">Convenção de condomínio</a></li>
+          <li><a href="#">Padrões para instalação de ítens</a></li>
+		  
+          <li><a href="#">Regimento interno</a></li>
+			<li class="dropdown">
+		    <a href="#" style="text-decoration: none;color:black">Atas de assembleias ▾</a>
+		    <ul class="dropdown-content" >
+		  	<li><a href="#">12/03/2024 (deliberação dos .....)</a></li>
+		  	<li><a href="#">22/01/2023 (deliberação dos .....)</a></li>
+		  	<li><a href="#">10/03/2022 (deliberação dos .....)</a></li>
+		    </ul>
+		  </li>
         </ul>
       </section>
       <section id="ideias">
@@ -89,22 +140,17 @@ header {
           <button type="submit">Enviar</button>
         </form>
       </section>
-      <section id="fotos">
-        <h2>Fotos</h2>
-        <div class="fotos">
-          <img style="height: 200px;" src="https://www.construfase.com.br/image/cT05OSZ6Yz0xJnNyYz1pbWcvZW1wcmVlbmRpbWVudG9zL2VtcHJlZW5kaW1lbnRvXzQ3Mi5qcGcmc2VjdXJlPXtidXJufQ==.jpg" alt="Foto do condomínio">
-          <img style="height: 200px;" src="https://www.masieroimoveis.com/wp-content/uploads/2019/09/FOTO-INSER%C3%87%C3%83O-810x455.jpg" alt="Salão de festas">
-          <img style="height: 200px;" src="https://www.masieroimoveis.com/wp-content/uploads/2019/09/CAMPO-E-CHURRAS-SAN-TELMO.jpg" alt="Campo">
-        </div>
-      </section>
+
       <section id="agendamento">
         <h2>Agendamento de espaços</h2>
         <form>
           <label>Espaço:</label>
           <select>
             <option>Salão de festas</option>
-            <option>Churrasqueira</option>
-            <option>Quadra esportiva</option>
+            <option>Churrasqueiras</option>
+            <option>Quadra de areia (eventos autorizados do condomínio)</option>
+            <option>Campo (eventos autorizados do condomínio)</option>
+            <option>Quadra (eventos autorizados do condomínio)</option>
           </select><br><br>
           <label>Data:</label>
           <input type="date">
@@ -114,18 +160,14 @@ header {
         </form>
       </section>
       <section id="oportunidades">
-        <h2>Oportunidades de aquisição</h2>
-        <p>Conheça unidades disponíveis à venda ou locação:</p>
+        <h2>Oportunidades de aquisição / locação:</h2><br>
         <ul>
-          <li>Apto 101 – 2 quartos – R$ 350.000</li>
-          <li>Apto 203 – 3 quartos – R$ 450.000</li>
-          <li>Loja 01 – Térreo – R$ 200.000</li>
+          <li>Apto 101 – 2 quartos – R$ 350.000 - <a href="#">contato</a></li>
+          <li>Apto 203 – 3 quartos – R$ 450.000 - <a href="#">contato</a></li>
+          <li>Loja 01 – Térreo – R$ 200.000 - <a href="#">contato</a></li>
         </ul>
       </section>
-      <section id="quem-somos">
-        <h2>Quem somos</h2>
-        <p>Residencial Torres de San Telmo – Excelência em morar bem.</p>
-      </section>
+
     </main>
     <footer>
       <p>Endereço: Rua dr. Jairo Frank, 100 – Argentina, Criciúma – SC</p>
