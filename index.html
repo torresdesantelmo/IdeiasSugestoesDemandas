@@ -47,7 +47,7 @@ header {
       }
       footer a { color: #4da6ff; text-decoration: none; }
       .fotos img { max-width: 200px; margin: 10px; border-radius: 4px; }
-      form input, form textarea { width: 100%; padding: 8px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; }
+      form input .dado, form textarea { width: 100%; padding: 8px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; }
       form button { padding: 10px 20px; border: none; background: #0077cc; color: #fff; border-radius: 4px; cursor: pointer; }
 	  /*MENU RECOLHIVEL*/
 		.dropdown {
@@ -91,6 +91,8 @@ header {
           <li><a href="#ideias">Ideias<br>Sugestões<br>Demandas</a></li>
           <li><a href="#agendamento">Agendamento de espaços</a></li>
           <li><a href="#oportunidades">Oportunidades de aquisição</a></li>
+          <li><a href="#cadastro">Cadastro de morador</a></li>
+          <li><a href="#serviços">Serviços internos</a></li>
         </ul>
       </nav>
     </header>
@@ -167,7 +169,152 @@ header {
           <li>Loja 01 – Térreo – R$ 200.000 - <a href="#">contato</a></li>
         </ul>
       </section>
+      <section id="cadastro">
+        <h2>Cadastro novo morador</h2>
+		<h2>Faça login com seu e-mail e aguarde aprovação dos síndicos.</h2><br>
+<form id="residentForm">
+  <label>Torre:</label>
+  <select name="torre" required>
+    <option value="">Selecione</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select><br><br>
 
+  <label>Apartamento:</label>
+  <input type="text" name="apartamento" required><br><br>
+
+  <div id="moradoresContainer">
+    <div class="morador">
+      <h2>Morador Principal</h2>
+      <label>Nome:</label>
+      <input type="text" name="morador_nome[]" required>
+      <label>E-mail:</label>
+      <input type="email" name="morador_email[]" required>
+      <label>Telefone:</label>
+      <input type="tel" name="morador_telefone[]" required><br><br>
+    </div>
+  </div>
+  <button type="button" id="addMorador">+ morador</button><br><br>
+
+  <label><input type="checkbox" id="hasPet"> Possui pet?</label><br>
+  <div id="petSection" style="display:none; margin-left:20px;">
+    <div id="petsContainer"></div>
+    <button type="button" id="addPet">+ pet</button><br><br>
+  </div>
+
+  <label><input type="checkbox" id="hasVehicle"> Possui veículo?</label><br>
+  <div id="vehicleSection" style="display:none; margin-left:20px;">
+    <div id="vehiclesContainer"></div>
+    <button type="button" id="addVehicle">+ carro</button><br><br>
+  </div>
+
+  <button type="submit">Enviar</button>
+
+  <!-- Templates -->
+  <div id="moradorTemplate" style="display:none;">
+    <div class="morador">
+      <h2>Morador Adicional</h2>
+      <label>Nome:</label>
+      <input type="text" name="morador_nome[]" required>
+      <label>E-mail:</label>
+      <input type="email" name="morador_email[]" required>
+      <label>Telefone:</label>
+      <input type="tel" name="morador_telefone[]" required><br>
+      <button type="button" class="removeBtn">Remover morador</button><br><br>
+    </div>
+  </div>
+  <div id="petTemplate" style="display:none;">
+    <div class="pet">
+      <h3>Cadastro de Pet</h3>
+      <label>Tipo de pet:</label>
+      <input type="text" name="pet_tipo[]"><br>
+      <label>Raça:</label>
+      <input type="text" name="pet_raca[]"><br>
+      <label>Nome:</label>
+      <input type="text" name="pet_nome[]"><br>
+      <label>Foto:</label>
+      <input type="file" name="pet_foto[]"><br>
+      <button type="button" class="removeBtn">Remover pet</button><br><br>
+    </div>
+  </div>
+  <div id="vehicleTemplate" style="display:none;">
+    <div class="vehicle">
+      <h3>Cadastro de Veículo</h3>
+      <label>Placa:</label>
+      <input type="text" name="veiculo_placa[]"><br>
+      <label>Modelo:</label>
+      <input type="text" name="veiculo_modelo[]"><br>
+      <label>Cor:</label>
+      <input type="text" name="veiculo_cor[]"><br>
+      <button type="button" class="removeBtn">Remover veículo</button><br><br>
+    </div>
+  </div>
+</form>
+
+<script>
+  // Handler de remoção por delegação
+  document.getElementById('residentForm').addEventListener('click', function(e) {
+    if (e.target.classList.contains('removeBtn')) {
+      e.target.closest('div').remove();
+    }
+  });
+
+  // Moradores
+  document.getElementById('addMorador').addEventListener('click', function() {
+    const tpl = document.getElementById('moradorTemplate').firstElementChild.cloneNode(true);
+    document.getElementById('moradoresContainer').appendChild(tpl);
+  });
+
+  // Pets
+  const hasPet = document.getElementById('hasPet');
+  hasPet.addEventListener('change', function() {
+    document.getElementById('petSection').style.display = this.checked ? 'block' : 'none';
+    if(this.checked && !document.querySelector('#petsContainer .pet')) {
+      addPet();
+    }
+  });
+  document.getElementById('addPet').addEventListener('click', addPet);
+  function addPet() {
+    const tpl = document.getElementById('petTemplate').firstElementChild.cloneNode(true);
+    document.getElementById('petsContainer').appendChild(tpl);
+  }
+
+  // Veículos
+  const hasVehicle = document.getElementById('hasVehicle');
+  hasVehicle.addEventListener('change', function() {
+    document.getElementById('vehicleSection').style.display = this.checked ? 'block' : 'none';
+    if(this.checked && !document.querySelector('#vehiclesContainer .vehicle')) {
+      addVehicle();
+    }
+  });
+  document.getElementById('addVehicle').addEventListener('click', addVehicle);
+  function addVehicle() {
+    const tpl = document.getElementById('vehicleTemplate').firstElementChild.cloneNode(true);
+    document.getElementById('vehiclesContainer').appendChild(tpl);
+  }
+</script>
+
+      </section>
+	   <section id="serviços">
+        <h2>Serviços prestados por moradores:</h2><br>
+        <ul>
+          <li>Carregadores - Patrícia <a href="#">contato</a></li>
+          <li>Adriana  - Corretora <a href="#">contato</a></li>
+          <li>Fisioterapia – Richard <a href="#">contato</a></li>
+          <li>Carregadores - Patrícia <a href="#">contato</a></li>
+          <li>Adriana  - Corretora <a href="#">contato</a></li>
+          <li>Fisioterapia – Richard <a href="#">contato</a></li>
+          <li>Carregadores - Patrícia <a href="#">contato</a></li>
+          <li>Adriana  - Corretora <a href="#">contato</a></li>
+          <li>Fisioterapia – Richard <a href="#">contato</a></li>
+          <li>Carregadores - Patrícia <a href="#">contato</a></li>
+          <li>Adriana  - Corretora <a href="#">contato</a></li>
+          <li>Fisioterapia – Richard <a href="#">contato</a></li>
+        </ul>
+      </section>
+      <section id="cadastro">
     </main>
     <footer>
       <p>Endereço: Rua dr. Jairo Frank, 100 – Argentina, Criciúma – SC</p>
