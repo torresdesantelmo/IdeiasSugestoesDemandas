@@ -77,7 +77,6 @@
 		}
 
 		.dropdown-content a {
-		  padding: 8px 12px;
 		  display: block;
 		  
 		}
@@ -91,7 +90,7 @@
 		 
 		
 			
-		.pdf-link{		padding: 4px 10px; border: none; background: #0077cc; color: #fff; border-radius: 4px; cursor: pointer; 	}	
+		.pdf-link{ padding: 4px 10px; border: none; background: #0077cc; color: #fff; border-radius: 4px; cursor: pointer;margin: 2px;}	
 			
     </style>
   </head>
@@ -125,13 +124,13 @@
 	  <section  id="docs" >	  
       <h2>Documentos</h2>
       <ul style="display:inline-block;line-height: 3.0;">
-      Click no documento a ser visto:
+      Click no documento:
         <span><a href="https://www.ime.unicamp.br/~chico/ma091verao/m091_ex1.pdf" class="pdf-link">Regimento interno</a> | 
 		<a href="https://grupos.moodle.ufsc.br/pluginfile.php/168573/mod_resource/content/1/Ex_Conj_Nuno.pdf" class="pdf-link">Convenção</a> | 
 		<a href="https://drive.google.com/file/d/1tOa6CznBgJlIUswBoouyXncLYS6wnpQt/view?usp=sharing" class="pdf-link">Padronização de ítens</a> | </span>
 		
 		<span class="dropdown">
-		    <a href="#" style="text-decoration: none;color:black">Atas de assembleias ▾</a>
+		    <b style="text-decoration: none;color:black">. . . . . . . Atas de assembleias . . . . . . ▾</b>
 		    <ul class="dropdown-content" >
 		  	<li><a href="#" class="pdf-link">12/03/2024(deliberação dos .....)</a></li>
 		  	<li><a href="#" class="pdf-link">22/01/2023(deliberação dos .....)</a></li>
@@ -227,7 +226,7 @@ function getEmbedUrl(url) {
 		  <label> | Apartamento:</label>
 		  <input type="text" name="apartamento" required>
 		  
-		  <label>Situação:</label>
+		  <label> | Situação:</label>
 		  <select name="proprietario_inquilino" required>
 			<option value="">Selecione</option>
 			<option>Proprietário</option>
@@ -237,11 +236,11 @@ function getEmbedUrl(url) {
 		  <div id="moradoresContainer">
 			<div class="morador">
 			  <h4 style="display:inline-block;">Morador Principal: </h4>
-			  <label>Nome:</label>
+			  <label> Nome:</label>
 			  <input type="text" name="morador_nome[]" required>
-			  <label>E-mail:</label>
+			  <label> | E-mail:</label>
 			  <input type="email" name="morador_email[]" required>
-			  <label>Telefone:</label>
+			  <label> | Telefone:</label>
 			  <input type="tel" name="morador_telefone[]" required>
 			</div>
 		  </div>
@@ -264,12 +263,12 @@ function getEmbedUrl(url) {
 		  <!-- Templates -->
 		  <div id="moradorTemplate" style="display:none;">
 			<div class="morador">
-			  <h4>Morador Adicional: </h4>
+			  <h4 style="display:inline-block;">Morador Adicional: </h4>
 			  <label>Nome:</label>
 			  <input type="text" name="morador_nome[]" required>
-			  <label>E-mail:</label>
+			  <label> | E-mail:</label>
 			  <input type="email" name="morador_email[]" required>
-			  <label>Telefone:</label>
+			  <label> | Telefone:</label>
 			  <input type="tel" name="morador_telefone[]" required>
 			  <button type="button" class="removeBtn">Remover morador</button>
 			</div>
@@ -278,11 +277,11 @@ function getEmbedUrl(url) {
 			<div class="pet">
 			  <label>Espécie:</label>
 			  <input type="text" name="pet_tipo[]">
-			  <label>Raça:</label>
+			  <label> | Raça:</label>
 			  <input type="text" name="pet_raca[]">
-			  <label>Nome:</label>
+			  <label> | Nome:</label>
 			  <input type="text" name="pet_nome[]">
-			  <label>Foto:</label>
+			  <label> | Foto:</label>
 			  <input type="file" name="pet_foto[]">
 			  <button type="button" class="removeBtn">Remover pet</button>
 			</div>
@@ -291,9 +290,9 @@ function getEmbedUrl(url) {
 			<div class="vehicle">
 			  <label>Placa:</label>
 			  <input type="text" name="veiculo_placa[]">
-			  <label>Modelo:</label>
+			  <label> | Modelo:</label>
 			  <input type="text" name="veiculo_modelo[]">
-			  <label>Cor:</label>
+			  <label> | Cor:</label>
 			  <input type="text" name="veiculo_cor[]">
 			  <button type="button" class="removeBtn">Remover veículo</button>
 			</div>
