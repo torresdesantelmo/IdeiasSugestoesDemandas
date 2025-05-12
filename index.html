@@ -10,21 +10,26 @@
         background: url('https://www.construfase.com.br/image/cT05OSZ6Yz0xJnNyYz1pbWcvZW1wcmVlbmRpbWVudG9zL2VtcHJlZW5kaW1lbnRvXzQ3Mi5qcGcmc2VjdXJlPXtidXJufQ==.jpg') no-repeat center/cover;
         color: #333;
       }
-header {
-  position: relative;
-  height: 100px;
-  background: url('https://www.construfase.com.br/image/cT05OSZ6Yz0xJnNyYz1pbWcvZW1wcmVlbmRpbWVudG9zL2VtcHJlZW5kaW1lbnRvXzQ3Mi5qcGcmc2VjdXJlPXtidXJufQ==.jpg') no-repeat center calc(100% - 60%) / cover;
-}
+		header {
+		  position: relative;
+		  height: 100px;
+		  /*background: url('https://www.construfase.com.br/image/cT05OSZ6Yz0xJnNyYz1pbWcvZW1wcmVlbmRpbWVudG9zL2VtcHJlZW5kaW1lbnRvXzQ3Mi5qcGcmc2VjdXJlPXtidXJufQ==.jpg') no-repeat center calc(100% - 60%) / cover;*/
+		}
 
-      nav {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(255,255,255,0.8);
-        border-radius: 8px;
-      }
-      nav ul { list-style: none; display: flex; }
+
+		
+		nav {
+			/* position: absolute; */
+			bottom: 20px;
+			/* left: 50%; */
+			/* transform: translateX(-50%); */
+			background: rgba(255, 255, 255, 0.8);
+			border-radius: 8px;
+			margin: 30px;
+			vertical-align: bottom;
+		}
+     
+      nav ul { list-style: none; display: flex; align-items: center;}
       nav li { margin: 0 15px; }
       nav a {
         display: block;
@@ -33,6 +38,7 @@ header {
         color: #333;
         font-weight: bold;
 		text-align: center;
+		height: 100%;
       }
       nav a:hover, nav a.active { background: #0077cc; color: #fff; border-radius: 4px; }
       main { padding: 40px; background: rgba(255,255,255,0.9); min-height: calc(87vh - 100px); }
@@ -47,7 +53,7 @@ header {
       }
       footer a { color: #4da6ff; text-decoration: none; }
       .fotos img { max-width: 200px; margin: 10px; border-radius: 4px; }
-      form input .dado, form textarea { width: 100%; padding: 8px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; }
+      form input, form textarea { /*width: 100%;*/ padding: 8px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; }
       form button { padding: 10px 20px; border: none; background: #0077cc; color: #fff; border-radius: 4px; cursor: pointer; }
 	  /*MENU RECOLHIVEL*/
 		.dropdown {
@@ -79,7 +85,14 @@ header {
 		.dropdown:hover .dropdown-content {
 		  display: block;
 		}
-
+		.morador,.vehicle,.pet, .ap {align-items: center; gap: 10px;background:LightGray;margin:10px; border-radius: 8px;padding:5px;}
+		 .morador h3,.vehicle h3,.pet h3 {display:inline-block;}
+		 
+		 
+		
+			
+		.pdf-link{		padding: 4px 10px; border: none; background: #0077cc; color: #fff; border-radius: 4px; cursor: pointer; 	}	
+			
     </style>
   </head>
   <body>
@@ -88,11 +101,11 @@ header {
         <ul>
           <li><a href="#quem-somos" class="active">Quem somos</a></li>
           <li><a href="#docs">Documentos úteis</a></li>
-          <li><a href="#ideias">Ideias<br>Sugestões<br>Demandas</a></li>
+          <li><a href="#ideias">Sugestões e Demandas</a></li>
           <li><a href="#agendamento">Agendamento de espaços</a></li>
-          <li><a href="#oportunidades">Oportunidades de aquisição</a></li>
           <li><a href="#cadastro">Cadastro de morador</a></li>
-          <li><a href="#serviços">Serviços internos</a></li>
+          <li><a href="#serviços">Prestação de serviços</a></li>
+          <li><a href="#oportunidades">Oportunidades de aquisição</a></li>
         </ul>
       </nav>
     </header>
@@ -108,37 +121,73 @@ header {
           <img style="height: 200px;" src="https://www.masieroimoveis.com/wp-content/uploads/2019/09/CAMPO-E-CHURRAS-SAN-TELMO.jpg" alt="Campo">
         </div>
       </section>
-      <section id="docs">
-        <h2>Documentos úteis</h2>
-        <ul style="line-height: 2.6;">
-          <li><a href="#">Manual do proprietário</a></li>
-          <li><a href="#">Convenção de condomínio</a></li>
-          <li><a href="#">Padrões para instalação de ítens</a></li>
-		  
-          <li><a href="#">Regimento interno</a></li>
-			<li class="dropdown">
+
+	  <section  id="docs" >	  
+      <h2>Documentos</h2>
+      <ul style="display:inline-block;line-height: 3.0;">
+      Click no documento a ser visto:
+        <span><a href="https://www.ime.unicamp.br/~chico/ma091verao/m091_ex1.pdf" class="pdf-link">Regimento interno</a> | 
+		<a href="https://grupos.moodle.ufsc.br/pluginfile.php/168573/mod_resource/content/1/Ex_Conj_Nuno.pdf" class="pdf-link">Convenção</a> | 
+		<a href="https://drive.google.com/file/d/1tOa6CznBgJlIUswBoouyXncLYS6wnpQt/view?usp=sharing" class="pdf-link">Padronização de ítens</a> | </span>
+		
+		<span class="dropdown">
 		    <a href="#" style="text-decoration: none;color:black">Atas de assembleias ▾</a>
 		    <ul class="dropdown-content" >
-		  	<li><a href="#">12/03/2024 (deliberação dos .....)</a></li>
-		  	<li><a href="#">22/01/2023 (deliberação dos .....)</a></li>
-		  	<li><a href="#">10/03/2022 (deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">12/03/2024(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">22/01/2023(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">10/03/2022(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">12/03/2024(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">22/01/2023(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">10/03/2022(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">12/03/2024(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">22/01/2023(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">10/03/2022(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">12/03/2024(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">22/01/2023(deliberação dos .....)</a></li>
+		  	<li><a href="#" class="pdf-link">10/03/2022(deliberação dos .....)</a></li>
 		    </ul>
-		  </li>
-        </ul>
-      </section>
+		</span>
+      </ul>
+  
+      <iframe id="pdfViewer" src="" frameborder="0" style="width: 100%; height: 80vh; border: 1px solid #ccc; "></iframe>
+ 
+	
+	
+	  <script>
+function getEmbedUrl(url) {
+      // Google Drive share link
+      const driveMatch = url.match(/\/file\/d\/(.*?)\//);
+      if (driveMatch) {
+        return `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+      }
+      // outros PDFs diretos
+      return url;
+    }
+
+    document.querySelectorAll('.pdf-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetUrl = getEmbedUrl(this.href);
+        document.getElementById('pdfViewer').src = targetUrl;
+      });
+    });
+  </script>
+  </section>
+
+
       <section id="ideias">
         <h2>Situação das demandas</h2><br>
 		<iframe style="width: 100%; height: 80vh; border: none; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNqLiDsCoVCHW6TAR0XCg66MTbOrLJJ_mq69xFJ3Ovg9yZsqjnIlQHOnjbUXuVCgsydCGjHrfRdIV-/pubhtml?gid=0&amp;range=A1:D&amp;widget=false&amp;headers=false&amp;chrome=false"></iframe><br><br><br>
-		<h2>Novas sugestões e demandas</h2><br><br>
+		<h2>Novas sugestões e demandas</h2><br>
         <form>
           <label>Seu nome:</label>
-          <input type="text" name="nome" required>
+          <input style="width: 100%;" type="text" name="nome" required>
           <label>E-mail:</label>
-          <input type="email" name="email" required>
+          <input style="width: 100%;" type="email" name="email" required>
           <label>Mensagem:</label>
-          <textarea name="mensagem" rows="5" required></textarea>
+          <textarea style="width: 100%;" name="mensagem" rows="5" required></textarea>
           <label>Anexar arquivo (opcional):</label>
-          <input type="file" name="arquivo">
+          <input style="width: 100%;" type="file" name="arquivo">
           <button type="submit">Enviar</button>
         </form>
       </section>
@@ -161,97 +210,95 @@ header {
           <button type="submit">Agendar</button>
         </form>
       </section>
-      <section id="oportunidades">
-        <h2>Oportunidades de aquisição / locação:</h2><br>
-        <ul>
-          <li>Apto 101 – 2 quartos – R$ 350.000 - <a href="#">contato</a></li>
-          <li>Apto 203 – 3 quartos – R$ 450.000 - <a href="#">contato</a></li>
-          <li>Loja 01 – Térreo – R$ 200.000 - <a href="#">contato</a></li>
-        </ul>
-      </section>
       <section id="cadastro">
         <h2>Cadastro novo morador</h2>
-		<h2>Faça login com seu e-mail e aguarde aprovação dos síndicos.</h2><br>
-<form id="residentForm">
-  <label>Torre:</label>
-  <select name="torre" required>
-    <option value="">Selecione</option>
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-  </select><br><br>
+		<h4>Faça login com seu e-mail e aguarde aprovação do síndico.</h4><br>
+		<form id="residentForm">
+		<div class="ap">
+		  <label>Torre:</label>
+		  <select name="torre" required>
+			<option value="">Selecione</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+		  </select>
 
-  <label>Apartamento:</label>
-  <input type="text" name="apartamento" required><br><br>
+		  <label> | Apartamento:</label>
+		  <input type="text" name="apartamento" required>
+		  
+		  <label>Situação:</label>
+		  <select name="proprietario_inquilino" required>
+			<option value="">Selecione</option>
+			<option>Proprietário</option>
+			<option>Inquilino</option>
+		  </select>
+		</div>	
+		  <div id="moradoresContainer">
+			<div class="morador">
+			  <h4 style="display:inline-block;">Morador Principal: </h4>
+			  <label>Nome:</label>
+			  <input type="text" name="morador_nome[]" required>
+			  <label>E-mail:</label>
+			  <input type="email" name="morador_email[]" required>
+			  <label>Telefone:</label>
+			  <input type="tel" name="morador_telefone[]" required>
+			</div>
+		  </div>
+		  <button type="button" id="addMorador">+ morador</button><br><br>
 
-  <div id="moradoresContainer">
-    <div class="morador">
-      <h2>Morador Principal</h2>
-      <label>Nome:</label>
-      <input type="text" name="morador_nome[]" required>
-      <label>E-mail:</label>
-      <input type="email" name="morador_email[]" required>
-      <label>Telefone:</label>
-      <input type="tel" name="morador_telefone[]" required><br><br>
-    </div>
-  </div>
-  <button type="button" id="addMorador">+ morador</button><br><br>
+		  <label><input type="checkbox" id="hasPet"> Possui pet?</label><br>
+		  <div id="petSection" style="display:none; margin-left:20px;">
+			<div id="petsContainer"></div>
+			<button type="button" id="addPet">+ pet</button><br><br>
+		  </div>
 
-  <label><input type="checkbox" id="hasPet"> Possui pet?</label><br>
-  <div id="petSection" style="display:none; margin-left:20px;">
-    <div id="petsContainer"></div>
-    <button type="button" id="addPet">+ pet</button><br><br>
-  </div>
+		  <label><input type="checkbox" id="hasVehicle"> Possui veículo?</label><br>
+		  <div id="vehicleSection" style="display:none; margin-left:20px;">
+			<div id="vehiclesContainer"></div>
+			<button type="button" id="addVehicle">+ carro</button><br><br>
+		  </div>
 
-  <label><input type="checkbox" id="hasVehicle"> Possui veículo?</label><br>
-  <div id="vehicleSection" style="display:none; margin-left:20px;">
-    <div id="vehiclesContainer"></div>
-    <button type="button" id="addVehicle">+ carro</button><br><br>
-  </div>
+		  <button type="submit">Enviar</button>
 
-  <button type="submit">Enviar</button>
-
-  <!-- Templates -->
-  <div id="moradorTemplate" style="display:none;">
-    <div class="morador">
-      <h2>Morador Adicional</h2>
-      <label>Nome:</label>
-      <input type="text" name="morador_nome[]" required>
-      <label>E-mail:</label>
-      <input type="email" name="morador_email[]" required>
-      <label>Telefone:</label>
-      <input type="tel" name="morador_telefone[]" required><br>
-      <button type="button" class="removeBtn">Remover morador</button><br><br>
-    </div>
-  </div>
-  <div id="petTemplate" style="display:none;">
-    <div class="pet">
-      <h3>Cadastro de Pet</h3>
-      <label>Tipo de pet:</label>
-      <input type="text" name="pet_tipo[]"><br>
-      <label>Raça:</label>
-      <input type="text" name="pet_raca[]"><br>
-      <label>Nome:</label>
-      <input type="text" name="pet_nome[]"><br>
-      <label>Foto:</label>
-      <input type="file" name="pet_foto[]"><br>
-      <button type="button" class="removeBtn">Remover pet</button><br><br>
-    </div>
-  </div>
-  <div id="vehicleTemplate" style="display:none;">
-    <div class="vehicle">
-      <h3>Cadastro de Veículo</h3>
-      <label>Placa:</label>
-      <input type="text" name="veiculo_placa[]"><br>
-      <label>Modelo:</label>
-      <input type="text" name="veiculo_modelo[]"><br>
-      <label>Cor:</label>
-      <input type="text" name="veiculo_cor[]"><br>
-      <button type="button" class="removeBtn">Remover veículo</button><br><br>
-    </div>
-  </div>
-</form>
+		  <!-- Templates -->
+		  <div id="moradorTemplate" style="display:none;">
+			<div class="morador">
+			  <h4>Morador Adicional: </h4>
+			  <label>Nome:</label>
+			  <input type="text" name="morador_nome[]" required>
+			  <label>E-mail:</label>
+			  <input type="email" name="morador_email[]" required>
+			  <label>Telefone:</label>
+			  <input type="tel" name="morador_telefone[]" required>
+			  <button type="button" class="removeBtn">Remover morador</button>
+			</div>
+		  </div>
+		  <div id="petTemplate" style="display:none;">
+			<div class="pet">
+			  <label>Espécie:</label>
+			  <input type="text" name="pet_tipo[]">
+			  <label>Raça:</label>
+			  <input type="text" name="pet_raca[]">
+			  <label>Nome:</label>
+			  <input type="text" name="pet_nome[]">
+			  <label>Foto:</label>
+			  <input type="file" name="pet_foto[]">
+			  <button type="button" class="removeBtn">Remover pet</button>
+			</div>
+		  </div>
+		  <div id="vehicleTemplate" style="display:none;">
+			<div class="vehicle">
+			  <label>Placa:</label>
+			  <input type="text" name="veiculo_placa[]">
+			  <label>Modelo:</label>
+			  <input type="text" name="veiculo_modelo[]">
+			  <label>Cor:</label>
+			  <input type="text" name="veiculo_cor[]">
+			  <button type="button" class="removeBtn">Remover veículo</button>
+			</div>
+		  </div>
+		</form>
 
 <script>
   // Handler de remoção por delegação
@@ -314,17 +361,24 @@ header {
           <li>Fisioterapia – Richard <a href="#">contato</a></li>
         </ul>
       </section>
+	  <section id="oportunidades">
+        <h2>Oportunidades de aquisição / locação:</h2><br>
+        <ul>
+          <li>Locação: Apto 101 – 2 quartos – R$ 350.000 - <a href="#">contato</a></li>
+          <li>Locação: Apto 203 – 3 quartos – R$ 450.000 - <a href="#">contato</a></li>
+          <li>Venda: Loja 01 – Térreo – R$ 200.000 - <a href="#">contato</a></li>
+        </ul>
+      </section>
       <section id="cadastro">
     </main>
     <footer>
-      <p>Endereço: Rua dr. Jairo Frank, 100 – Argentina, Criciúma – SC</p>
-      <p>Contatos: (48) 1234-5678 | res.torresdesantelmo@gmail.com </p>
-      <p>Redes sociais:
+      <p><b>Endereço:</b> Rua dr. Jairo Frank, 100 – Argentina, Criciúma – SC <a href="https://maps.app.goo.gl/xtz6k1iNVFSNrP4e7" target="_blank">📍</a></p>
+      <p><b>Contatos:</b> (48) 93618-0644 | res.torresdesantelmo@gmail.com </p>
+      <p><b>Redes sociais:</b>
         <a href="#">Facebook</a> |
-        <a href="#">Instagram</a> |
-        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
       </p>
-      <p>Síndicos: Janquiel &amp; Nicoly</p>
+      <p><b>Síndicos:</b> Janquiel &amp; Nicoly | <b>Conselheiros:</b> Paulo, Vitor, Kemilly &amp; Juliana</p>
     </footer>
     <script>
       const links = document.querySelectorAll('nav a');
